@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -13,6 +14,7 @@ public class CameraController : MonoBehaviour
 
     private int travel = 0;
     private Transform currentDestination;
+
 
     void Start()
     {
@@ -42,7 +44,6 @@ public class CameraController : MonoBehaviour
         {
             travel = 0;
         }
-
     }
 
     private void LerpCameras()
@@ -52,5 +53,10 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, currentDestination.position, Time.deltaTime * smooth);
             transform.rotation = Quaternion.Slerp(transform.rotation, currentDestination.rotation, Time.deltaTime * smooth);
         }
+    }
+
+    public void Begin()
+    {
+        doTravelCamera = true;
     }
 }
