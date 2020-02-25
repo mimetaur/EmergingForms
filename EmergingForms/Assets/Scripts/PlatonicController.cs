@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 public class PlatonicController : MonoBehaviour
@@ -25,12 +26,14 @@ public class PlatonicController : MonoBehaviour
     private float absorbAmount = 0;
     private int didEat = 0;
     private float size = 0;
+    private Renderer rend;
 
 
     void Start()
     {
         parentController = platonicParent.GetComponent<PlatonicParentController>();
         swell = GetComponent<Swell>();
+        rend = GetComponent<Renderer>();
         anim = GetComponent<Animator>();
         anim.Play("PlatonicGodHidden");
     }
@@ -57,6 +60,15 @@ public class PlatonicController : MonoBehaviour
     void Update()
     {
         DidEat = 0;
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlatonicGodHidden"))
+        {
+            rend.shadowCastingMode = ShadowCastingMode.Off;
+        }
+        else
+        {
+            rend.shadowCastingMode = ShadowCastingMode.On;
+        }
+
         Spin();
     }
 
