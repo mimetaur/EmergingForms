@@ -19,7 +19,7 @@ public class PlatonicController : MonoBehaviour
     public int DidEat { get => didEat; set => didEat = value; }
     public float Size { get => size; set => size = value; }
 
-    public float absorbRate = 2.0f;
+    public float spinRate = 10f;
     public float absorbThreshold = 0.75f;
     public Swell swell;
     private float absorbAmount = 0;
@@ -57,6 +57,7 @@ public class PlatonicController : MonoBehaviour
     void Update()
     {
         DidEat = 0;
+        Spin();
     }
 
     void OnTriggerEnter(Collider other)
@@ -70,5 +71,10 @@ public class PlatonicController : MonoBehaviour
             DidEat = 1;
             Size = GameUtils.Map(swell.Size(), 0, swell.maxSwellFactor, 0, 1.0f);
         }
+    }
+
+    private void Spin()
+    {
+        transform.Rotate(0, spinRate * Time.deltaTime, 0);
     }
 }
