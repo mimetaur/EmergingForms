@@ -47,7 +47,11 @@ public class PlatonicController : MonoBehaviour
         }
         else if (newIsActive == INACTIVE_STATE)
         {
-            anim.Play("PlatonicGodFadeOut");
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("PlatonicGodHidden"))
+            {
+                anim.Play("PlatonicGodFadeOut");
+            }
+
             IsActive = false;
         }
     }
