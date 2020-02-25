@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77c30ff8268594b009d34aebc993df62, type: 2}
+  - {fileID: 2100000, guid: 04a0a2da8891c4f3692f54c09fd3bd99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,7 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3573915394814878749}
   goal: {fileID: 0}
+  spawner: {fileID: 0}
   resetRate: 0.1
+  rethinkWanderRate: 5
+  wanderRadius: 1000
 --- !u!54 &-3298226100994036039
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -63,10 +63,12 @@ public class PlatonicController : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlatonicGodHidden"))
         {
             rend.shadowCastingMode = ShadowCastingMode.Off;
+            rend.enabled = false;
         }
         else
         {
             rend.shadowCastingMode = ShadowCastingMode.On;
+            rend.enabled = true;
         }
 
         Spin();
