@@ -198,17 +198,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7a2b8a21574634dc8a3cf617d4d67c1c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a2b8a21574634dc8a3cf617d4d67c1c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a2b8a21574634dc8a3cf617d4d67c1c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 7a2b8a21574634dc8a3cf617d4d67c1c,
         type: 3}
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 9000
+  m_Intensity: 6000
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -498,7 +498,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 9000
+  m_Intensity: 6000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -541,9 +541,9 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 9000
+  m_ColorTemperature: 9403
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 1e-45, y: 1.16e-43, z: 0, w: 2.460862e+10}
+  m_BoundingSphereOverride: {x: 0, y: 4e-45, z: 1.683e-41, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0.53
@@ -554,13 +554,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331594604}
-  m_LocalRotation: {x: 0.70019025, y: 0.5256512, z: 0.09865969, w: 0.47295955}
+  m_LocalRotation: {x: 0.70311624, y: 0.43231726, z: -0.07501723, w: 0.55955493}
   m_LocalPosition: {x: -3.18, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 33.959003, y: 130, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 58.4, y: 133.78, z: 90.00001}
 --- !u!1 &341682848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299618583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -351, y: 0, z: 20.8}
+  m_LocalPosition: {x: -542, y: 0, z: 20.8}
   m_LocalScale: {x: 10, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
