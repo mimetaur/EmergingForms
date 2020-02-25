@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 9
   multiplier:
     m_OverrideState: 1
-    m_Value: 400
+    m_Value: 575
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 35
+    m_Value: 25
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
