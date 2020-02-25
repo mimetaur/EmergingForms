@@ -19,6 +19,7 @@ public class PlatonicController : MonoBehaviour
     public int NumEntitiesAbsorbed { get => numEntitiesAbsorbed; set => numEntitiesAbsorbed = value; }
     public int DidEat { get => didEat; set => didEat = value; }
     public float Size { get => size; set => size = value; }
+    public int DidEatMoreThanThreshold { get => didEatMoreThanThreshold; set => didEatMoreThanThreshold = value; }
 
     public float spinRate = 10f;
     public float absorbThreshold = 0.75f;
@@ -28,6 +29,8 @@ public class PlatonicController : MonoBehaviour
     private float size = 0;
     private Renderer rend;
 
+    public int eatNumThreshold = 50;
+    private int didEatMoreThanThreshold = 0;
 
     void Start()
     {
@@ -64,6 +67,7 @@ public class PlatonicController : MonoBehaviour
     void Update()
     {
         DidEat = 0;
+        DidEatMoreThanThreshold = 0;
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlatonicGodHidden"))
         {
             rend.shadowCastingMode = ShadowCastingMode.Off;
@@ -82,12 +86,21 @@ public class PlatonicController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Entity") && parentController.NumActivePlatonics > 0 && absorbAmount > absorbThreshold)
         {
-            NumEntitiesAbsorbed++;
             other.GetComponent<EntityController>().Die();
             Destroy(other.gameObject);
+
             swell.Grow();
-            DidEat = 1;
             Size = GameUtils.Map(swell.Size(), 0, swell.maxSwellFactor, 0, 1.0f);
+
+            NumEntitiesAbsorbed++;
+            Debug.Log(gameObject.name + "has eaten " + NumEntitiesAbsorbed + " entities");
+            if (NumEntitiesAbsorbed > eatNumThreshold)
+            {
+                DidEatMoreThanThreshold = 1;
+                NumEntitiesAbsorbed = 0;
+            }
+
+            DidEat = 1;
         }
     }
 

@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4189556554350270860}
   - component: {fileID: 1796867636903026707}
   - component: {fileID: 6232298647862850657}
+  - component: {fileID: 6278274085366154920}
   m_Layer: 0
   m_Name: PlatonicGod
   m_TagString: Entity
@@ -101,9 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platonicParent: {fileID: 0}
-  absorbRate: 2
+  spinRate: 10
   absorbThreshold: 0.75
   swell: {fileID: 0}
+  eatNumThreshold: 25
 --- !u!114 &734960657728101903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,4 +333,22 @@ MonoBehaviour:
   _oscAddress: /platonic/size
   _dataSource: {fileID: 734960657728101889}
   _propertyName: Size
+  _keepSending: 0
+--- !u!114 &6278274085366154920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734960657728101890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e43cc78b62f2184d8bebe41bd574f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ipAddress: 127.0.0.1
+  _udpPort: 9001
+  _oscAddress: /platonic/ate_over_threshold
+  _dataSource: {fileID: 734960657728101889}
+  _propertyName: DidEatMoreThanThreshold
   _keepSending: 0
