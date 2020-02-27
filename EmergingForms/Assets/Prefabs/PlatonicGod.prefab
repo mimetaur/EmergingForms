@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 734960657728101888}
   - component: {fileID: 734960657728101900}
   - component: {fileID: 4189556554350270860}
-  - component: {fileID: 1796867636903026707}
   - component: {fileID: 6232298647862850657}
   - component: {fileID: 6278274085366154920}
+  - component: {fileID: 7219359722321086954}
   m_Layer: 0
   m_Name: PlatonicGod
   m_TagString: Entity
@@ -298,24 +298,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1796867636903026707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734960657728101890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e43cc78b62f2184d8bebe41bd574f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ipAddress: 127.0.0.1
-  _udpPort: 9001
-  _oscAddress: /platonic/ate
-  _dataSource: {fileID: 734960657728101889}
-  _propertyName: DidEat
-  _keepSending: 0
 --- !u!114 &6232298647862850657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +330,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ipAddress: 127.0.0.1
   _udpPort: 9001
-  _oscAddress: /platonic/ate_over_threshold
+  _oscAddress: /platonic/over_threshold
   _dataSource: {fileID: 734960657728101889}
   _propertyName: DidEatMoreThanThreshold
+  _keepSending: 0
+--- !u!114 &7219359722321086954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734960657728101890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e43cc78b62f2184d8bebe41bd574f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ipAddress: 127.0.0.1
+  _udpPort: 9001
+  _oscAddress: /platonic/ate
+  _dataSource: {fileID: 734960657728101889}
+  _propertyName: DidEat
   _keepSending: 0

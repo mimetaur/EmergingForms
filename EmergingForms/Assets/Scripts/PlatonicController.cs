@@ -31,6 +31,7 @@ public class PlatonicController : MonoBehaviour
 
     public int eatNumThreshold = 50;
     private int didEatMoreThanThreshold = 0;
+    public float resetAteStateRate = 0.2f;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class PlatonicController : MonoBehaviour
         rend = GetComponent<Renderer>();
         anim = GetComponent<Animator>();
         anim.Play("PlatonicGodHidden");
+        InvokeRepeating("ResetAteState", resetAteStateRate, resetAteStateRate);
     }
 
     public void ToggleActive(int newIsActive)
@@ -66,8 +68,6 @@ public class PlatonicController : MonoBehaviour
 
     void Update()
     {
-        DidEat = 0;
-        DidEatMoreThanThreshold = 0;
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlatonicGodHidden"))
         {
             rend.shadowCastingMode = ShadowCastingMode.Off;
@@ -86,6 +86,8 @@ public class PlatonicController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Entity") && parentController.NumActivePlatonics > 0 && absorbAmount > absorbThreshold)
         {
+            DidEat = 1;
+
             other.GetComponent<EntityController>().Die();
             Destroy(other.gameObject);
 
@@ -93,19 +95,23 @@ public class PlatonicController : MonoBehaviour
             Size = GameUtils.Map(swell.Size(), 0, swell.maxSwellFactor, 0, 1.0f);
 
             NumEntitiesAbsorbed++;
-            Debug.Log(gameObject.name + "has eaten " + NumEntitiesAbsorbed + " entities");
+
             if (NumEntitiesAbsorbed > eatNumThreshold)
             {
                 DidEatMoreThanThreshold = 1;
                 NumEntitiesAbsorbed = 0;
             }
-
-            DidEat = 1;
         }
     }
 
     private void Spin()
     {
         transform.Rotate(0, spinRate * Time.deltaTime, 0);
+    }
+
+    private void ResetAteState()
+    {
+        DidEat = 0;
+        DidEatMoreThanThreshold = 0;
     }
 }
