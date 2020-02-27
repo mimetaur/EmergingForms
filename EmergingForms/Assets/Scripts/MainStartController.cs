@@ -13,16 +13,16 @@ public class MainStartController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.Play("Hidden");
+        anim.Play("FadeIn");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyUp("space") && anim.GetCurrentAnimatorStateInfo(0).IsName("Hidden"))
+        if (Input.GetKeyUp("space") )
         {
-            anim.Play("FadeIn");
+            anim.Play("FadeOut");
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("FadeOut"))

@@ -19,7 +19,6 @@ public class PlatonicParentController : MonoBehaviour
     {
         Spin();
         UpdateNumPlatonics();
-
     }
 
     private void Spin()
