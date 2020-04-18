@@ -43,3 +43,12 @@ The following packages were added:
   com.unity.modules.vr@1.0.0
   com.unity.modules.wind@1.0.0
   com.unity.modules.xr@1.0.0
+
+=== Sat Apr 18 14:38:58 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.render-pipelines.high-definition from version 7.1.8 to 7.3.1
+  com.unity.test-framework from version 1.1.11 to 1.1.13
